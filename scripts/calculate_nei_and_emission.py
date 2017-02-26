@@ -27,3 +27,6 @@ field.calculate_fractional_ionization(emiss_model,ebtel_plug,
 aia = InstrumentSDOAIA([0,4990]*u.s,use_temperature_response_functions=False)
 field.calculate_emission(emiss_model,savefile=os.path.join(ar_root,'loop_emiss.h5'),
                             imagers=[aia])
+
+#Finally, save the field
+field.save(savedir=os.path.join(ar_root,'checkpoint'))
